@@ -20,6 +20,8 @@ connectDB()
 // and fetch cookies credentials requirement
 app.use(credentials);
 
+app.use(cookieParser())
+
 app.use(cors(corsOptions))
 
 app.use(express.json())
@@ -27,7 +29,6 @@ app.use(express.json())
 app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({policy: 'cross-origin'}))
 
-app.use(cookieParser())
 
 app.use('/', express.static(path.join(__dirname, 'public')))
 
