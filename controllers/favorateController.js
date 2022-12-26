@@ -35,7 +35,6 @@ exports.postFavorate = async (req, res, next) => {
     updatedFavorates = userInfo.favorates.filter((f) => {
       return f.toString() !== productId.toString();
     });
-    console.log(updatedFavorates);
     userInfo.favorates = updatedFavorates;
   } else {
     updatedFavorates = [...userInfo.favorates, productId];
